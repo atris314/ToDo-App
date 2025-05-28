@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
 
+    protected $taskRepo;
+    public function __construct(TaskRepository $taskRepo)
+    {
+        $this->taskRepo = $taskRepo;
+    }
 
     public function store(Request $request)
     {
